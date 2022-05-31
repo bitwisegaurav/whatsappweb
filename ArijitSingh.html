@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,500,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-height: 100vh;
+            background: rgb(228, 224, 191);
+            scroll-behavior: smooth;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 0.7rem;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #bbb;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(136, 131, 131);
+        }
+
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* height: 60px; */
+            padding: 10px 16px;
+        }
+        nav::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgba(43, 226, 113, 0.1);
+        }
+
+        nav .name {
+            display: flex;
+            align-items: center;
+            font-family: sans-serif;
+            /* border: 2px solid red; */
+        }
+
+        nav .name .img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            /* margin: 0 0.8rem; */
+            border-radius: 50%;
+            /* border: 2px solid red; */
+            overflow: hidden;
+        }
+
+        nav .name .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        nav .name .p {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav .name .p h6 {
+            font-size: 18px;
+            font-weight: lighter;
+            margin-bottom: 2px;
+        }
+
+        nav .name .p p {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        nav .logos span {
+            padding: 8px;
+            /* margin: 0 0; */
+            color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+        }
+
+        span:active,
+        i:active {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Bottom section */
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            z-index: 99999;
+            background-color: white;
+            width: 100%;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+            padding: 0px 16px;
+            /* width: 100%; */
+        }
+
+        .buttons input {
+            margin-right: 10px;
+            height: 44px;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 17px;
+            padding: 0px 15px;
+        }
+
+        .mar-rig {
+            margin-right: 14px;
+        }
+
+        span,
+        i {
+            font-size: 18px;
+            cursor: pointer;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .p {
+            cursor: default;
+        }
+
+        /* Center Section */
+        .container{
+            padding-bottom: 3rem;
+        }
+        .container .rightside{
+            margin: 10px 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            margin-bottom: 10px;
+            /* border: 2px solid red; */
+        }
+        
+        .container .rightside .rightmsg{
+            position: relative;
+            max-width: 80%;
+            min-width: 100px;
+            padding: 10px;
+            /* border: 2px solid red; */
+            display: flex;
+            border-radius: 10px;
+            background: #dcf8c6;
+            margin-bottom: 4px;
+        }
+        .container .rightside:last-child .rightmsg{
+            min-width: 130px;
+        }
+        .container .rightside .rightmsg::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -12px;
+            width: 20px;
+            height: 20px;
+            z-index: 99;
+            /* border: 2px solid red; */
+            background: linear-gradient(135deg, #dcf8c6 0%, #dcf8c6 50%, transparent 50%, transparent 100%);
+        }
+        .msg{
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 10px;
+            color: rgba(0, 0, 0, 0.8);
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            letter-spacing: -0.2px;
+            width: 96%;
+        }
+        .msginfo{
+            position: absolute;
+            align-self: flex-end;
+            justify-self: flex-end;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            right: 10px;
+        }
+        .msginfo .time{
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .container .leftside{
+            margin: 10px 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-bottom: 10px;
+            /* border: 2px solid red; */
+        }
+        .container .leftside .leftmsg{
+            position: relative;
+            max-width: 80%;
+            min-width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            margin-bottom: 4px;
+            /* border: 2px solid red; */
+            background: #fff;
+        }
+        .container .leftside .leftmsg::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -12px;
+            width: 20px;
+            height: 20px;
+            z-index: 98;
+            /* border: 2px solid red; */
+            background: linear-gradient(-135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+        }
+        .seen{
+            position: relative;
+            margin-left: 2px;
+            color: rgb(0, 174, 255);
+        }
+        .seen span{
+            color: rgb(0, 174, 255);
+            transform: rotate(-8deg);
+        }
+        .seen span:nth-child(2){
+            position: absolute;
+            /* top: 0; */
+            left: 4.5px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="name">
+            <div class="img">
+                <img src="https://publicbiography.com/public/uploads/news-3381.webp" alt="">
+            </div>
+            <div class="p">
+                <h6>Arijit Singh</h6>
+                <p id="lastseen">last seen today at 6:32pm</p>
+            </div>
+        </div>
+        <div class="logos">
+            <span class="material-symbols-outlined">search</span>
+            <span class="material-symbols-outlined">more_vert</span>
+        </div>
+    </nav>
+
+    <!-- Cemter Container -->
+    <div class="container">
+
+        <div class="leftside">
+            <div class="leftmsg">
+                <div class="msg">Hello</div>
+                <div class="msginfo">
+                    <div class="time">8:32 am</div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="rightside">
+            <div class="rightmsg">
+                <div class="msg">Hi</div>
+                <div class="msginfo">
+                    <div class="time">9:39 am</div>
+                    <div class="tick"></div><div class="seen">
+                        <span class="material-symbols-outlined">done</span>
+                        <span class="material-symbols-outlined">done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leftside">
+            <div class="leftmsg">
+                <div class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel accusamus maiores magnam adipisci officia quo explicabo, reiciendis sed natus dolores exercitationem et molestias sequi eligendi nihil vitae temporibus incidunt, quae repellat recusandae qui minima. Doloremque corrupti quidem qui sunt?</div>
+                <div class="msginfo">
+                    <div class="time">11:42 am</div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="rightside">
+            <div class="rightmsg">
+                <div class="msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quae ipsum autem sed odit mollitia perspiciatis accusamus, sequi, expedita odio, molestiae exercitationem! Vel, neque iure ipsum earum sed animi ratione!</div>
+                <div class="msginfo">
+                    <div class="time">1:05 pm</div>
+                    <div class="seen">
+                        <span class="material-symbols-outlined">done</span>
+                        <span class="material-symbols-outlined">done</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rightmsg">
+                <div class="msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quae ipsum autem sed odit mollitia perspiciatis accusamus, sequi, expedita odio, molestiae exercitationem! Vel, neque iure ipsum earum sed animi ratione!</div>
+                <div class="msginfo">
+                    <div class="time">1:06 pm</div>
+                    <div class="seen">
+                        <span class="material-symbols-outlined">done</span>
+                        <span class="material-symbols-outlined">done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leftside">
+            <div class="leftmsg">
+                <div class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel accusamus maiores magnam adipisci officia quo explicabo, reiciendis sed natus dolores exercitationem et molestias sequi eligendi nihil vitae temporibus incidunt, quae repellat recusandae qui minima. Doloremque corrupti quidem qui sunt?</div>
+                <div class="msginfo">
+                    <div class="time">3:52 pm</div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="rightside">
+            <div class="rightmsg">
+                <div class="msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quae ipsum autem sed odit mollitia perspiciatis accusamus, sequi, expedita odio, molestiae exercitationem! Vel, neque iure ipsum earum sed animi ratione!</div>
+                <div class="msginfo">
+                    <div class="time">5:19 pm</div>
+                    <div class="seen">
+                        <span class="material-symbols-outlined">done</span>
+                        <span class="material-symbols-outlined">done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leftside">
+            <div class="leftmsg">
+                <div class="msg">Done</div>
+                <div class="msginfo">
+                    <div class="time">5:52 am</div>
+                    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="rightside">
+            <div class="rightmsg">
+                <div class="msg">Aur pher</div>
+                <div class="msginfo">
+                    <div class="time">3:00 am</div>
+                    <div class="seen">
+                        <span class="material-symbols-outlined">done</span>
+                        <span class="material-symbols-outlined">done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bottom container -->
+    <div class="bottom">
+        <div class="buttons">
+            <span class="material-symbols-rounded mar-rig">mood</span>
+            <i class="fa-solid fa-paperclip mar-rig"></i>
+            <input type="text" name="searchbox" placeholder="Type a message">
+            <span class="material-symbols-rounded">mic</span>
+        </div>
+    </div>
+</body>
+<script>
+    setTimeout(() => {
+        document.getElementById('lastseen').style.display = "none";
+    }, 10000);
+</script>
+<script src="https://kit.fontawesome.com/111b1c1bf6.js" crossorigin="anonymous"></script>
+
+</html>

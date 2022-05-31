@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,500,0,0" />
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,300,0,0" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            /* background: rgba(43, 226, 113, 0.3); */
+            background-color: white;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 0.7rem;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #bbb;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(136, 131, 131);
+        }
+
+        header{
+            background: white;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* height: 60px; */
+            padding: 10px 16px;
+        }
+        .mainimg{
+            width: 40px;
+            height: 40px;
+            /* border: 2px solid red; */
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .mainimg img{
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        .sidelogos span{
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+        .sidelogos span:last-child{
+            margin-left: 8px;
+        }
+        section{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* justify-content: ; */
+            align-items: center;
+            background: rgba(0, 140, 255, 0.6);
+            /* z-index: 1; */
+        }
+        section .left{
+            /* border: 2px solid red; */
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(58, 166, 255);
+            background: white;
+            border-radius: 50%;
+            margin: 0 1rem;
+        }
+        section .right p:nth-child(1){
+            margin-bottom: 3px;
+        }
+        section .right p:nth-child(2){
+            font-size: small;
+        }
+        nav{
+            padding: 6px 12px;
+            background-color: white;
+        }
+        nav .namesearch{
+            width: 100%;
+            background: rgba(43, 226, 113, 0.1);
+            display: flex;
+            align-items: center;
+            height: 45px;
+            border-radius: 15px;
+        }
+        nav .namesearch span{
+            margin: 0.7rem;
+            cursor: pointer;
+        }
+        nav .namesearch input{
+            height: 45px;
+            width: 70%;
+            background: transparent;
+            padding: 0 1rem;
+            border: none;
+            outline: none;
+        }
+        nav .namesearch input:focus::placeholder{
+            color: transparent;
+        }
+
+        .chatlist{
+            position: relative;
+            height: calc(100vh - 200px);
+            overflow-y: scroll;
+        }
+        .chatlist .block{
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+        }
+        .chatlist .block.active{
+            background: rgba(0, 0, 0, 0.15);
+        }
+        .chatlist .block.unread .details .listhead .time{
+            color: rgb(0, 172, 72);
+        }
+        .chatlist .block:hover{
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .chatlist .block .imgbx{
+            position: relative;
+            width: 55px;
+            height: 45px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-right: 15px;
+            /* border: 2px solid red; */
+        }
+        .chatlist .block .imgbx img{
+            width: 100%;
+            height: 100%;
+        }
+        .chatlist .block .details{
+            position: relative;
+            width: 100%;
+        }
+        .chatlist .block .details .listhead{
+            display: flex;
+            justify-content: space-between;
+        }
+        .chatlist .block .details .listhead h4{
+            font-size: 1.1rem;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-weight: 600;
+            margin-bottom: 3px;
+            color: #111;
+        }
+        .chatlist .block .details .listhead .time{
+            font-size: 0.8rem;
+            font-weight: 500;
+            
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .chatlist .block .details .messages_p{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .messages_p p{
+            color: rgba(0, 0, 0, 0.6);
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            font-size: 0.8rem;
+            font-weight: 100;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* border: 2px solid red; */
+        }
+        .messages_p b{
+            color: white;
+            background: rgb(0, 172, 72);
+            min-width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            font-weight: 100;
+            font-size: 0.8rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .seen{
+            position: relative;
+            margin-left: 2px;
+            color: rgb(0, 174, 255);
+        }
+        .seen span{
+            color: rgb(0, 174, 255);
+            transform: rotate(-8deg);
+        }
+        .seen span:nth-child(2){
+            position: absolute;
+            /* top: 0; */
+            left: 4.5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="mainimg">
+            <img src="pic.jpg" alt="">
+        </div>
+        <div class="sidelogos">
+            <span class="whatsapp-status">
+                <img src="whatsapp-status.png" alt="">
+            </span>
+            <span class="material-symbols-outlined">chat</span>
+            <span class="material-symbols-outlined">more_vert</span>
+        </div>
+    </header>
+    <section>
+        <div class="left">
+            <span class="material-symbols-outlined">
+                notifications_off
+                </span>
+        </div>
+        <div class="right">
+            <p>Get notified of new messages</p>
+            <p>Turn on desktop notifications <b>></b> </p>
+        </div>
+    </section>
+    <div class="mainsection">
+        <div class="mainsection">
+            <nav>
+                <div class="namesearch">
+                    <span class="material-symbols-rounded">search</span>
+                    <input type="text" name="search" placeholder="Search or start new chat">
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- <main>
+        <div class="box">
+            <div class="pic"></div>
+            <div class="person">
+                <div class="name">Abhishek Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, hic.</div>
+                <div class="msg">Aur bhai</div>
+            </div>
+            <div class="time"></div>
+        </div>
+    </main> -->
+    <div class="chatlist">
+        
+        <div class="block active">
+            <div class="imgbx">
+                <img src="https://publicbiography.com/public/uploads/news-3381.webp" alt="">
+            </div>
+            <div class="details">
+                <div class="listhead">
+                    <h4 class="name">Arijit Singh</h4>
+                    <p class="time">3:00 am</p>
+                </div>
+                <div class="messages_p">
+                    <p>Aur pher</p>
+                    <div class="seen">
+                        <span class="material-symbols-outlined">done</span>
+                        <span class="material-symbols-outlined">done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="https://yt3.ggpht.com/Y3Xd5a92Olf_5x5igDk8MzzqyKChkP3jKoV6-Iux8e7zChGDMSsrLIt95T8GZd--0FTqQE9KfQ=s900-c-k-c0x00ffffff-no-rj" alt="">
+            </div>
+            <div class="details">
+                <div class="listhead">
+                    <h4 class="name">Armaan Malik</h4>
+                    <p class="time">1:56 am</p>
+                </div>
+                <div class="messages_p">
+                    <p>Aur bta</p>
+                    <b>1</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="https://i.pinimg.com/736x/6c/b9/f5/6cb9f509bc1e13615df9a72d0fe9532f.jpg" alt="">
+            </div>
+            <div class="details">
+                <div class="listhead">
+                    <h4 class="name">Atif Aslam</h4>
+                    <p class="time">10:56 pm</p>
+                </div>
+                <div class="messages_p">
+                    <p>How to make Whatsapp Clone using HTML and CSS</p>
+                    <b>10</b>
+                </div>
+            </div>
+        </div>
+        
+        <div class="block">
+            <div class="imgbx">
+                <img src="https://static.toiimg.com/photo/52476941.cms" alt="">
+            </div>
+            <div class="details">
+                <div class="listhead">
+                    <h4 class="name">Sonu Nigam</h4>
+                    <p class="time">10:56 pm</p>
+                </div>
+                <div class="messages_p">
+                    <p>How to make Whatsapp Clone using HTML and CSS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="https://i.pinimg.com/600x315/6f/4d/27/6f4d276f42cde9d1a4c2206caf7d3645.jpg" alt="">
+            </div>
+            <div class="details">
+                <div class="listhead">
+                    <h4 class="name">KK</h4>
+                    <p class="time">10:56 pm</p>
+                </div>
+                <div class="messages_p">
+                    <p>How to make Whatsapp Clone using HTML and CSS</p>
+                    <b>5</b>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="imgbx">
+                <img src="https://images.bhaskarassets.com/web2images/521/2021/05/22/shreya_1621689071.jpg" alt="">
+            </div>
+            <div class="details">
+                <div class="listhead">
+                    <h4 class="name">Shreya Ghoshal</h4>
+                    <p class="time">10:56 pm</p>
+                </div>
+                <div class="messages_p">
+                    <p>Thik h</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="https://static.toiimg.com/thumb/msid-83299048,width-1200,height-900,resizemode-4/.jpg" alt="">
+            </div>
+            <div class="details">
+                <div class="listhead">
+                    <h4 class="name">Palak Muchhal</h4>
+                    <p class="time">10:56 pm</p>
+                </div>
+                <div class="messages_p">
+                    <p>How to make Whatsapp Clone using HTML and CSS</p>
+                    <b>4</b>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://kit.fontawesome.com/111b1c1bf6.js" crossorigin="anonymous"></script>
+</html>
