@@ -32,110 +32,7 @@
     </nav>
 
     <!-- Cemter Container -->
-    <div class="container">
-
-        <div class="leftside">
-            <div class="leftmsg">
-                <div class="msg">Hello</div>
-                <div class="msginfo">
-                    <div class="time">8:32 am</div>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="rightside">
-            <div class="rightmsg">
-                <div class="msg">Hi</div>
-                <div class="msginfo">
-                    <div class="time">9:39 am</div>
-                    <div class="tick"></div><div class="seen">
-                        <span class="material-symbols-outlined">done</span>
-                        <span class="material-symbols-outlined">done</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="leftside">
-            <div class="leftmsg">
-                <div class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel accusamus maiores magnam adipisci officia quo explicabo, reiciendis sed natus dolores exercitationem et molestias sequi eligendi nihil vitae temporibus incidunt, quae repellat recusandae qui minima. Doloremque corrupti quidem qui sunt?</div>
-                <div class="msginfo">
-                    <div class="time">11:42 am</div>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="rightside">
-            <div class="rightmsg">
-                <div class="msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quae ipsum autem sed odit mollitia perspiciatis accusamus, sequi, expedita odio, molestiae exercitationem! Vel, neque iure ipsum earum sed animi ratione!</div>
-                <div class="msginfo">
-                    <div class="time">1:05 pm</div>
-                    <div class="seen">
-                        <span class="material-symbols-outlined">done</span>
-                        <span class="material-symbols-outlined">done</span>
-                    </div>
-                </div>
-            </div>
-            <div class="rightmsg">
-                <div class="msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quae ipsum autem sed odit mollitia perspiciatis accusamus, sequi, expedita odio, molestiae exercitationem! Vel, neque iure ipsum earum sed animi ratione!</div>
-                <div class="msginfo">
-                    <div class="time">1:06 pm</div>
-                    <div class="seen">
-                        <span class="material-symbols-outlined">done</span>
-                        <span class="material-symbols-outlined">done</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="leftside">
-            <div class="leftmsg">
-                <div class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel accusamus maiores magnam adipisci officia quo explicabo, reiciendis sed natus dolores exercitationem et molestias sequi eligendi nihil vitae temporibus incidunt, quae repellat recusandae qui minima. Doloremque corrupti quidem qui sunt?</div>
-                <div class="msginfo">
-                    <div class="time">3:52 pm</div>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="rightside">
-            <div class="rightmsg">
-                <div class="msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quae ipsum autem sed odit mollitia perspiciatis accusamus, sequi, expedita odio, molestiae exercitationem! Vel, neque iure ipsum earum sed animi ratione!</div>
-                <div class="msginfo">
-                    <div class="time">5:19 pm</div>
-                    <div class="seen">
-                        <span class="material-symbols-outlined">done</span>
-                        <span class="material-symbols-outlined">done</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="leftside">
-            <div class="leftmsg">
-                <div class="msg">Done</div>
-                <div class="msginfo">
-                    <div class="time">5:52 am</div>
-                    
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="rightside">
-            <div class="rightmsg">
-                <div class="msg">Aur pher</div>
-                <div class="msginfo">
-                    <div class="time">3:00 am</div>
-                    <div class="seen">
-                        <span class="material-symbols-outlined">done</span>
-                        <span class="material-symbols-outlined">done</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container"></div>
 
 
 
@@ -149,10 +46,12 @@
         </div>
     </div>
 </body>
+<script src="js/chats.js"></script>
+<script src="data/arijit.js"></script>
 <script>
-    setTimeout(() => {
-        document.getElementById('lastseen').style.display = "none";
-    }, 10000);
+    let container = document.querySelector('.container');
+
+    container.innerHTML = getChatsData(data);
 </script>
 <script src="https://kit.fontawesome.com/111b1c1bf6.js" crossorigin="anonymous"></script>
 
