@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background: rgba(43, 226, 113, 0.3); */
+  background-color: white;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(136, 131, 131);
+}
+
+header {
+  background: white;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 60px; */
+  padding: 10px 16px;
+}
+.mainimg {
+  width: 40px;
+  height: 40px;
+  /* border: 2px solid red; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+.mainimg img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.sidelogos span {
+  margin: 0 15px;
+  opacity: 0.7;
+}
+.sidelogos span:last-child {
+  margin-left: 8px;
+}
+section {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* justify-content: ; */
+  align-items: center;
+  background: rgba(0, 140, 255, 0.6);
+  /* z-index: 1; */
+}
+section .left {
+  /* border: 2px solid red; */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(58, 166, 255);
+  background: white;
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+section .right p:nth-child(1) {
+  margin-bottom: 3px;
+}
+section .right p:nth-child(2) {
+  font-size: small;
+}
+nav {
+  padding: 6px 12px;
+  background-color: white;
+}
+nav .namesearch {
+  width: 100%;
+  background: rgba(43, 226, 113, 0.1);
+  display: flex;
+  align-items: center;
+  height: 45px;
+  border-radius: 15px;
+}
+nav .namesearch span {
+  margin: 0.7rem;
+  cursor: pointer;
+}
+nav .namesearch input {
+  height: 45px;
+  width: 70%;
+  background: transparent;
+  padding: 0 1rem;
+  border: none;
+  outline: none;
+}
+nav .namesearch input:focus::placeholder {
+  color: transparent;
+}
+
+.chatlist {
+  position: relative;
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+}
+.chatlist .block {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+.chatlist .block.active {
+  background: rgba(0, 0, 0, 0.15);
+}
+.chatlist .block.unread .details .listhead .time {
+  color: rgb(0, 172, 72);
+}
+.chatlist .block:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.chatlist .block .imgbx {
+  position: relative;
+  width: 55px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 15px;
+  /* border: 2px solid red; */
+}
+.chatlist .block .imgbx img {
+  width: 100%;
+  height: 100%;
+}
+.chatlist .block .details {
+  position: relative;
+  width: 100%;
+}
+.chatlist .block .details .listhead {
+  display: flex;
+  justify-content: space-between;
+}
+.chatlist .block .details .listhead h4 {
+  font-size: 1.1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 600;
+  margin-bottom: 3px;
+  color: #111;
+}
+.chatlist .block .details .listhead .time {
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+.chatlist .block .details .messages_p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.messages_p p {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  font-size: 0.8rem;
+  font-weight: 100;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* border: 2px solid red; */
+}
+.messages_p b {
+  color: white;
+  background: rgb(0, 172, 72);
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  font-weight: 100;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+}
+.seen {
+  position: relative;
+  margin-left: 2px;
+  color: rgb(0, 174, 255);
+}
+.seen span {
+  color: rgb(0, 174, 255);
+  transform: rotate(-8deg);
+}
+.seen span:nth-child(2) {
+  position: absolute;
+  /* top: 0; */
+  left: 4.5px;
+}
