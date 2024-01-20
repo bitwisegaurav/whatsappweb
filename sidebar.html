@@ -53,122 +53,15 @@
             <div class="time"></div>
         </div>
     </main> -->
-    <div class="chatlist">
-        
-        <div class="block active">
-            <div class="imgbx">
-                <img src="https://publicbiography.com/public/uploads/news-3381.webp" alt="">
-            </div>
-            <div class="details">
-                <div class="listhead">
-                    <h4 class="name">Arijit Singh</h4>
-                    <p class="time">3:00 am</p>
-                </div>
-                <div class="messages_p">
-                    <p>Aur pher</p>
-                    <div class="seen">
-                        <span class="material-symbols-outlined">done</span>
-                        <span class="material-symbols-outlined">done</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="block unread">
-            <div class="imgbx">
-                <img src="https://yt3.ggpht.com/Y3Xd5a92Olf_5x5igDk8MzzqyKChkP3jKoV6-Iux8e7zChGDMSsrLIt95T8GZd--0FTqQE9KfQ=s900-c-k-c0x00ffffff-no-rj" alt="">
-            </div>
-            <div class="details">
-                <div class="listhead">
-                    <h4 class="name">Armaan Malik</h4>
-                    <p class="time">1:56 am</p>
-                </div>
-                <div class="messages_p">
-                    <p>Aur bta</p>
-                    <b>1</b>
-                </div>
-            </div>
-        </div>
-
-        <div class="block unread">
-            <div class="imgbx">
-                <img src="https://i.pinimg.com/736x/6c/b9/f5/6cb9f509bc1e13615df9a72d0fe9532f.jpg" alt="">
-            </div>
-            <div class="details">
-                <div class="listhead">
-                    <h4 class="name">Atif Aslam</h4>
-                    <p class="time">10:56 pm</p>
-                </div>
-                <div class="messages_p">
-                    <p>How to make Whatsapp Clone using HTML and CSS</p>
-                    <b>10</b>
-                </div>
-            </div>
-        </div>
-        
-        <div class="block">
-            <div class="imgbx">
-                <img src="https://static.toiimg.com/photo/52476941.cms" alt="">
-            </div>
-            <div class="details">
-                <div class="listhead">
-                    <h4 class="name">Sonu Nigam</h4>
-                    <p class="time">10:56 pm</p>
-                </div>
-                <div class="messages_p">
-                    <p>How to make Whatsapp Clone using HTML and CSS</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="block unread">
-            <div class="imgbx">
-                <img src="https://i.pinimg.com/600x315/6f/4d/27/6f4d276f42cde9d1a4c2206caf7d3645.jpg" alt="">
-            </div>
-            <div class="details">
-                <div class="listhead">
-                    <h4 class="name">KK</h4>
-                    <p class="time">10:56 pm</p>
-                </div>
-                <div class="messages_p">
-                    <p>How to make Whatsapp Clone using HTML and CSS</p>
-                    <b>5</b>
-                </div>
-            </div>
-        </div>
-        <div class="block">
-            <div class="imgbx">
-                <img src="https://images.bhaskarassets.com/web2images/521/2021/05/22/shreya_1621689071.jpg" alt="">
-            </div>
-            <div class="details">
-                <div class="listhead">
-                    <h4 class="name">Shreya Ghoshal</h4>
-                    <p class="time">10:56 pm</p>
-                </div>
-                <div class="messages_p">
-                    <p>Thik h</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="block unread">
-            <div class="imgbx">
-                <img src="https://static.toiimg.com/thumb/msid-83299048,width-1200,height-900,resizemode-4/.jpg" alt="">
-            </div>
-            <div class="details">
-                <div class="listhead">
-                    <h4 class="name">Palak Muchhal</h4>
-                    <p class="time">10:56 pm</p>
-                </div>
-                <div class="messages_p">
-                    <p>How to make Whatsapp Clone using HTML and CSS</p>
-                    <b>4</b>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    <div class="chatlist"></div>
 
 </body>
 <script src="https://kit.fontawesome.com/111b1c1bf6.js" crossorigin="anonymous"></script>
+<script src="sidebar-data.js"></script>
+<script src="sidebar.js"></script>
+<script>
+    let chatlistBox = document.querySelector('.chatlist')
+
+    chatlistBox.innerHTML = getUsersData(data)
+</script>
 </html>
